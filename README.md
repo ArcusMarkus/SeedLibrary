@@ -21,8 +21,13 @@
 - Team
 
 ## Team Participation
+Be in communication if we can't be present, agree to contribute to getting work done 
+even personal scheduling conflicts prevent being at a meeting.
+
 
 ## Personal Accountability
+If we fall behind in some aspect of the project we will communicate with our team 
+about why and get something figured out as a group. 
 
 ## Breach of Contract
 
