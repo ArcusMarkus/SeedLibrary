@@ -11,6 +11,10 @@
 ### Decision-making
 ### Regular Meeting Time and Location
 ### Communication
+If there is an issue or conflict we will discuss it directly but calmly, 
+so we can reach a peaceful solution that works for everyone. We will, to the best of our ability, 
+stay in communication for scheduling and any issues we may encounter with the project so we
+can work with each other to get around any obstacles.
 
 ## Team Procedure
 ### Method for Setting Meeting Agenda
