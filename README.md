@@ -35,6 +35,9 @@ Logistics wise communication will be conducted through the specific teams channe
 The agenda of the meetings will be set prior to their occurence to ensure that the meeting is productive. Time will be set aside to ensure any additional concerns are able to be addressed if they happen between the time of agenda setting and the meeting.
 
 ### Record Keeping Procedure
+
+Minutes will be taken at the meetings, the person responsible will be decided on a rotating basis to ensure fairness. The minutes will be posted in the Teams Chat following each meeting so that everyone has access to them.
+
 ### Absence Procedure
 
 The team is still able to meet if one team member is absent; however, if there are no pressing matters an alternative time may be arranged to suit everyone. The absentee must read the minutes to ensure they have a good grasp of what is going on and make contact with the team members at some other time to remain up to date.
@@ -54,6 +57,7 @@ We intend to use Peer Evaluation - consequences of breaches of this contract wil
 
 ## Signatures
 Clodagh Nangle
+
 Mark Belmonte
 
 Sadie Lewis
