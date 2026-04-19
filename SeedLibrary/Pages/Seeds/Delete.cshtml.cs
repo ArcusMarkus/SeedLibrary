@@ -29,7 +29,11 @@ namespace SeedLibrary.Pages.Seeds
                 return NotFound();
             }
 
-            var Seed = await _context.Seeds.FirstOrDefaultAsync(m => m.ID == id);
+                Seed = await _context.Seeds
+                .Include(s => s.Enrollments)
+                .ThenInclude(e => e.Course)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.ID == id);
 
             if (Seed is not null)
             {
@@ -41,20 +45,6 @@ namespace SeedLibrary.Pages.Seeds
             return NotFound();
         }
 
-        public async Task<IActionResult> OnPostAsync(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
 
-            Seed = await _context.Seeds.FirstOrDefaultAsync(m => m.ID == id);
-
-            if (Seed == null)
-            {
-                return NotFound();
-            }
-            return Page();
-        }
     }
 }
