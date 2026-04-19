@@ -7,8 +7,9 @@ namespace SeedLibrary.Models
         public string Variety { get; set; }
         public DateTime Year { get; set; }
         public int Depth {get; set; }
-
-
-        public ICollection<Enrollment> Enrollments { get; set; }
+        public int Count {get; set; }
+        public string Note {get; set; }
+        public int SourceID{get; set;}
+        public int DateID{get;set;}
     }
 }
