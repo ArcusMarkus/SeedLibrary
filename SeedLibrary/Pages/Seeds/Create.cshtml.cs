@@ -30,15 +30,19 @@ namespace SeedLibrary.Pages.Seeds
         // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
+            var emptySeed = new Seed();
+
+            if (await TryUpdateModelAsync<Seed>(
+                emptySeed,
+                "seed",   // Prefix for form value.
+                s => s.FirstMidName, s => s.LastName, s => s.EnrollmentDate))
             {
-                return Page();
+                _context.Seeds.Add(emptySeed);
+                await _context.SaveChangesAsync();
+                return RedirectToPage("./Index");
             }
 
-            _context.Seeds.Add(Seed);
-            await _context.SaveChangesAsync();
-
-            return RedirectToPage("./Index");
+            return Page();
         }
     }
 }

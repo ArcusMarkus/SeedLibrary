@@ -23,51 +23,42 @@ namespace SeedLibrary.Pages.Seeds
         [BindProperty]
         public Seed Seed { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+    public async Task<IActionResult> OnGetAsync(int? id)
+    {
+        if (id == null)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var Seed =  await _context.Seeds.FirstOrDefaultAsync(m => m.ID == id);
-            if (Seed == null)
-            {
-                return NotFound();
-            }
-            Seed = Seed;
-            return Page();
+            return NotFound();
         }
 
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more information, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        Seed = await _context.Seeds.FindAsync(id);
+
+        if (Seed == null)
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+            return NotFound();
+        }
+        return Page();
+    }
 
-            _context.Attach(Seed).State = EntityState.Modified;
+    public async Task<IActionResult> OnPostAsync(int id)
+    {
+        var seedToUpdate = await _context.Seeds.FindAsync(id);
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!SeedExists(Seed.ID))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+        if (seedToUpdate == null)
+        {
+            return NotFound();
+        }
 
+        if (await TryUpdateModelAsync<Seed>(
+            seedToUpdate,
+            "seed",
+            s => s.FirstMidName, s => s.LastName, s => s.EnrollmentDate))
+        {
+            await _context.SaveChangesAsync();
             return RedirectToPage("./Index");
         }
+
+        return Page();
+    }
 
         private bool SeedExists(int id)
         {
