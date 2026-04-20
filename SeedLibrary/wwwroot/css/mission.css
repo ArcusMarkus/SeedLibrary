@@ -1,0 +1,18 @@
+.webbutton{
+    background-color:#F46E15;
+    color: rgb(255, 255, 255);
+    border: 1px solid #dc6414;
+    border-radius: 5px;
+    font-size: 1vw;
+    margin: 5px
+}
+
+#seedspotbut{
+    background-color: #028DD0;
+    border-color:  #337ab7;
+}
+
+#seedinvbut{
+    background-color:  #8BC441;
+    border-color:   #6c9931;
+}
