@@ -20,13 +20,23 @@
     </div>
 </form>
 <table class="table">
-     <thead>
+    <p><b>Sort By:</b></p>
+    <button type="button" class="btn btn-link"> 
+        <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort"
+            asp-route-currentFilter="@Model.CurrentFilter">
+            @Html.DisplayNameFor(model => model.Seeds[0].Name)
+        </a> 
+    </button>
+    <button type="button" class="btn btn-link">
+        <a asp-page="./Index" asp-route-sortOrder="@Model.YearSort" 
+            asp-route-currentFilter="@Model.CurrentFilter">
+            @Html.DisplayNameFor(model => model.Seeds[0].Year)
+        </a> 
+    </button>
+    <thead>
         <tr>
             <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort"
-                   asp-route-currentFilter="@Model.CurrentFilter">
-                    @Html.DisplayNameFor(model => model.Seeds[0].Name)
-                </a>
+                @Html.DisplayNameFor(model => model.Seeds[0].Name)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Seeds[0].Variety)

@@ -2,30 +2,31 @@
 @model SeedLibrary.Pages.AboutModel
 
 @{
-    ViewData["Title"] = "Student Body Statistics";
+    ViewData["Title"] = "About Us";
 }
+<link rel="stylesheet" type="text/css" href="css/mission.css">
 
-<h2>Student Body Statistics</h2>
-
-<table>
-    <tr>
-        <th>
-            Enrollment Date
-        </th>
-        <th>
-            Students
-        </th>
-    </tr>
-
-    @foreach (var item in Model.Seeds)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.EnrollmentDate)
-            </td>
-            <td>
-                @item.StudentCount
-            </td>
-        </tr>
-    }
-</table>
+<div class="row mb-auto">
+    <h2>Our Mission</h2>
+    <div class="row  mb-4">
+        <div class="row">
+            <div class = "col-sm-5" id ="content">
+                <p>The Faulkner Country Library Gardening Program is a local gardening program with the oldest seed library in Arkansas that teaches people of all ages about gardening.  </p>
+                <p>The program hosts weekly events at the Faulkner County ​Library where they show people the importance of gardening and how to go about it correctly.</p>
+                <p>We aim to encourage people to start and continue gardening by making it more accessible to the general public through the seed library. We also seek to reduce waste by ensuring that donated seeds are used.</p>
+                <p>To check out seeds as of right now, you can visit the seed card and take which seeds you'd like to plant in your garden and check them out in the front. With this website, you should be able to view which seeds are currently available before you stop in! So if there's something in particular you wish to plant, you can check online before stopping in!</p>
+                <p>To ensure that all seeds will actually take to the gardens once planted, they are routinely tested for germination every few months by the program.</p>
+                <div class="row"> 
+                    <button type="button" class="webbutton" id="fclwebsitebut" onclick="location.href='https://fcl.org/departments/garden/'">Learn more at the Faulkner County Library Website!</button>
+                </div>
+                <div class="row"> 
+                    <button type="button" class="webbutton" id="seedspotbut" onclick="location.href='https://fcl.org/departments/garden/'">Featured Seeds</button>
+                    <button type="button" class="webbutton" id="seedinvbut" onclick="location.href='/Seeds'">View Seed Inventory</button>
+                </div>
+            </div>
+            <figure class="col-sm-6" >
+                <img src="images\SquareSeedCartImage.jpg" class = "img-fluid" id = "imagecar" alt="seedcart">
+            </figure>
+        </div>
+    </div>
+</div>

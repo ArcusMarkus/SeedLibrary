@@ -22,7 +22,7 @@ namespace SeedLibrary.Pages.Seeds
             Configuration = configuration;
         }
         public string NameSort { get; set; }
-        public string DateSort { get; set; }
+        public string YearSort { get; set; }
         public string CurrentFilter { get; set; }
         public string CurrentSort { get; set; }
         public PaginatedList<Seed> Seeds { get;set; } = default!;
@@ -32,7 +32,7 @@ namespace SeedLibrary.Pages.Seeds
         {
             CurrentSort = sortOrder;
             NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-            DateSort = sortOrder == "Date" ? "date_desc" : "Date";
+            YearSort = sortOrder == "Year" ? "year_desc" : "Year";
             if (searchString != null)
             {
                 pageIndex = 1;
@@ -56,11 +56,11 @@ namespace SeedLibrary.Pages.Seeds
                 case "name_desc":
                     seedsIQ = seedsIQ.OrderByDescending(s => s.Name);
                     break;
-                case "Date":
-                    seedsIQ = seedsIQ.OrderBy(s => s.EnrollmentDate);
+                case "Year":
+                    seedsIQ = seedsIQ.OrderBy(s => s.Year);
                     break;
-                case "date_desc":
-                    seedsIQ = seedsIQ.OrderByDescending(s => s.EnrollmentDate);
+                case "Year_desc":
+                    seedsIQ = seedsIQ.OrderByDescending(s => s.Year);
                     break;
                 default:
                     seedsIQ = seedsIQ.OrderBy(s => s.Name);
