@@ -35,7 +35,7 @@ namespace SeedLibrary.Pages.Seeds
             if (await TryUpdateModelAsync<Seed>(
                 emptySeed,
                 "seed",   // Prefix for form value.
-                s => s.FirstMidName, s => s.LastName, s => s.EnrollmentDate))
+                s => s.Variety, s => s.Name, s => s.EnrollmentDate))
             {
                 _context.Seeds.Add(emptySeed);
                 await _context.SaveChangesAsync();

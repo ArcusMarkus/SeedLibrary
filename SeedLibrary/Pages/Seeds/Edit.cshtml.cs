@@ -51,7 +51,7 @@ namespace SeedLibrary.Pages.Seeds
         if (await TryUpdateModelAsync<Seed>(
             seedToUpdate,
             "seed",
-            s => s.FirstMidName, s => s.LastName, s => s.EnrollmentDate))
+            s => s.Variety, s => s.Name, s => s.EnrollmentDate))
         {
             await _context.SaveChangesAsync();
             return RedirectToPage("./Index");

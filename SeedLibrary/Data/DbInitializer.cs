@@ -14,14 +14,23 @@ namespace SeedLibrary.Data
 
             var seeds = new Seed[]
             {
-                new Seed{FirstMidName="Arugula",LastName="Alexander",EnrollmentDate=DateTime.Parse("2019-09-01")},
-                new Seed{FirstMidName="Radish",LastName="Alonso",EnrollmentDate=DateTime.Parse("2017-09-01")},
-                new Seed{FirstMidName="Tomato",LastName="Anand",EnrollmentDate=DateTime.Parse("2018-09-01")},
-                new Seed{FirstMidName="Rice",LastName="Barzdukas",EnrollmentDate=DateTime.Parse("2017-09-01")},
-                new Seed{FirstMidName="Corn",LastName="Li",EnrollmentDate=DateTime.Parse("2017-09-01")},
-                new Seed{FirstMidName="Peas",LastName="Justice",EnrollmentDate=DateTime.Parse("2016-09-01")},
-                new Seed{FirstMidName="Eggplant",LastName="Norman",EnrollmentDate=DateTime.Parse("2018-09-01")},
-                new Seed{FirstMidName="Melon",LastName="Olivetto",EnrollmentDate=DateTime.Parse("2019-09-01")}
+                new Seed{Variety="Common",Name="Arugula", Year=2021,Date="Jan-Mar & Sep-Oct", Source= "Cool Farms", Depth="1/4 inch", Count=3, 
+                Note ="Succession-plant for continued harvest." , 
+                EnrollmentDate=DateTime.Parse("2019-09-01")},
+                new Seed{Variety="Green Globe",Name="Artichoke",Year=2021,Date="Jan-Mar & Sep-Oct",Source= "Cool Farms", Depth="1/4 inch", Count=3, 
+                Note ="Succession-plant for continued harvest." ,EnrollmentDate=DateTime.Parse("2017-09-01")},
+                new Seed{Variety="Calima",Name="Bean",Year=2021,Date="Jan-Mar & Sep-Oct", Source= "Cool Farms",Depth="1/4 inch", Count=3, 
+                Note ="Succession-plant for continued harvest." ,EnrollmentDate=DateTime.Parse("2018-09-01")},
+                new Seed{Variety="Mary Washington",Name="Asparagus",Year=2021,Date="Jan-Mar & Sep-Oct",Source= "Cool Farms", Depth="1/4 inch", Count=3, 
+                Note ="Succession-plant for continued harvest." ,EnrollmentDate=DateTime.Parse("2017-09-01")},
+                new Seed{Variety="Detroit Dark Red",Name="Beet",Year=2021,Date="Jan-Mar & Sep-Oct",Source= "Cool Farms", Depth="1/4 inch", Count=3, 
+                Note ="Succession-plant for continued harvest." ,EnrollmentDate=DateTime.Parse("2017-09-01")},
+                new Seed{Variety="Green Sprouting Calabrese",Name="Bok Choy",Year=2021,Date="Jan-Mar & Sep-Oct",Source= "Cool Farms", Depth="1/4 inch", Count=3, 
+                Note ="Succession-plant for continued harvest." ,EnrollmentDate=DateTime.Parse("2016-09-01")},
+                new Seed{Variety="Catskill",Name="Broccoli",Year=2021,Date="Jan-Mar & Sep-Oct", Source= "Cool Farms",Depth="1/4 inch", Count=3, 
+                Note ="Succession-plant for continued harvest." ,EnrollmentDate=DateTime.Parse("2018-09-01")},
+                new Seed{Variety="Red Cored Chantenay",Name="Carrot",Year=2021,Date="Jan-Mar & Sep-Oct",Source= "Cool Farms", Depth="1/4 inch", Count=3, 
+                Note ="Succession-plant for continued harvest." ,EnrollmentDate=DateTime.Parse("2019-09-01")}
             };
 
             context.Seeds.AddRange(seeds);

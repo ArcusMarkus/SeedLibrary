@@ -2,40 +2,64 @@
 @model SeedLibrary.Pages.Seeds.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Seeds";
 }
 
-<h1>Index</h1>
-
+<h1>Seeds Inventory</h1>
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Add New Seeds</a>
 </p>
+<form asp-page="./Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Search Seed Name:
+            <input type="text" name="SearchString" value="@Model.CurrentFilter" />
+            <input type="submit" value="Search" class="btn btn-primary" /> |
+            <a asp-page="./Index">Back to full List</a>
+        </p>
+    </div>
+</form>
 <table class="table">
-    <thead>
+     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Seed[0].LastName)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort"
+                   asp-route-currentFilter="@Model.CurrentFilter">
+                    @Html.DisplayNameFor(model => model.Seeds[0].Name)
+                </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Seed[0].FirstMidName)
+                @Html.DisplayNameFor(model => model.Seeds[0].Variety)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Seed[0].EnrollmentDate)
+                @Html.DisplayNameFor(model => model.Seeds[0].Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seeds[0].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seeds[0].Count)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Seed) {
+@foreach (var item in Model.Seeds) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.LastName)
+                @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FirstMidName)
+                @Html.DisplayFor(modelItem => item.Variety)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.EnrollmentDate)
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Count)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
@@ -46,3 +70,22 @@
 }
     </tbody>
 </table>
+@{
+    var prevDisabled = !Model.Seeds.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.Seeds.HasNextPage ? "disabled" : "";
+}
+
+<a asp-page="./Index"
+   asp-route-sortOrder="@Model.CurrentSort"
+   asp-route-pageIndex="@(Model.Seeds.PageIndex - 1)"
+   asp-route-currentFilter="@Model.CurrentFilter"
+   class="btn btn-primary @prevDisabled">
+    Previous
+</a>
+<a asp-page="./Index"
+   asp-route-sortOrder="@Model.CurrentSort"
+   asp-route-pageIndex="@(Model.Seeds.PageIndex + 1)"
+   asp-route-currentFilter="@Model.CurrentFilter"
+   class="btn btn-primary @nextDisabled">
+    Next
+</a>
