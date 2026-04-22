@@ -11,10 +11,10 @@
 </p>
 <form asp-page="./Index" method="get">
     <div class="form-actions no-color">
-        <p>
+        <p style="border: 2px solid #8BC441; background-color: #8BC441; padding: 10px;">
             Search Seed Name:
             <input type="text" name="SearchString" value="@Model.CurrentFilter" />
-            <input type="submit" value="Search" class="btn btn-primary" /> |
+            <input type="submit" value="Search" class="search-btn" /> |
             <a asp-page="./Index">Back to full List</a>
         </p>
     </div>
