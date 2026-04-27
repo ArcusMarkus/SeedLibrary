@@ -44,3 +44,11 @@ body {
     background-color: #02538B;
     color: white;
 }
+
+h1{
+  padding: 2vh;
+  font-family: 'Lato-Bold'; 
+  font-size: 50px;
+  padding-right: 3vh;
+  color: white;
+}
