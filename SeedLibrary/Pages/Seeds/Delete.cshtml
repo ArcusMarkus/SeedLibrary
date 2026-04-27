@@ -9,58 +9,65 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Seed</h4>
     <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Seed.Name)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Seed.Name)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Seed.Variety)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Seed.Variety)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Seed.Year)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Seed.Year)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Seed.Date)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Seed.Date)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Seed.Source)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Seed.Source)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Seed.Depth)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Seed.Depth)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Seed.Count)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Seed.Count)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Seed.Note)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Seed.Note)
-        </dd>
-    </dl>
+    <div class="row  mb-4">
+        <div class="col-sm-6">
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Seed.Name)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Seed.Name)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Seed.Variety)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Seed.Variety)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Seed.Year)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Seed.Year)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Seed.Date)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Seed.Date)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Seed.Source)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Seed.Source)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Seed.Depth)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Seed.Depth)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Seed.Count)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Seed.Count)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Seed.Note)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Seed.Note)
+                </dd>
+            </dl>
+        </div>
+        <div>
+            <img src="/images/Flower.png" alt="Seed Library" style= "width: 200px; height: 200px">
+        </div>
+    </div>
+</div>
     
     <form method="post">
         <input type="hidden" asp-for="Seed.ID" />
