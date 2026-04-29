@@ -14,10 +14,10 @@ namespace SeedLibrary.Pages.Seeds
 {
     public class DeleteModel : PageModel
     {
-        private readonly SeedLibrary.Data.SchoolContext _context;
+        private readonly SeedLibrary.Data.SeedContext _context;
         private readonly ILogger<DeleteModel> _logger;
 
-        public DeleteModel(SeedLibrary.Data.SchoolContext context,
+        public DeleteModel(SeedLibrary.Data.SeedContext context,
                            ILogger<DeleteModel> logger)
         {
             _context = context;

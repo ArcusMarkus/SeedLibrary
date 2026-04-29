@@ -13,9 +13,9 @@ namespace SeedLibrary.Pages.Seeds
 {
     public class EditModel : PageModel
     {
-        private readonly SeedLibrary.Data.SchoolContext _context;
+        private readonly SeedLibrary.Data.SeedContext _context;
 
-        public EditModel(SeedLibrary.Data.SchoolContext context)
+        public EditModel(SeedLibrary.Data.SeedContext context)
         {
             _context = context;
         }

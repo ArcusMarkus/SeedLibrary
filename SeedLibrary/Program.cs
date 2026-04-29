@@ -1,14 +1,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using SeedLibrary.Data;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddDbContext<SchoolContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("SchoolContextSQLite")));
+builder.Services.AddDbContext<SeedContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("SeedContextSQLite")));
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<SeedContext>();
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -31,7 +34,7 @@ using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
 
-    var context = services.GetRequiredService<SchoolContext>();
+    var context = services.GetRequiredService<SeedContext>();
     context.Database.EnsureCreated();
     DbInitializer.Initialize(context);
 }

@@ -13,10 +13,10 @@ namespace SeedLibrary.Pages.Seeds
 {
     public class IndexModel : PageModel
     {
-        private readonly SeedLibrary.Data.SchoolContext _context;
+        private readonly SeedLibrary.Data.SeedContext _context;
         private readonly IConfiguration Configuration;
 
-        public IndexModel(SchoolContext context, IConfiguration configuration)
+        public IndexModel(SeedContext context, IConfiguration configuration)
         {
             _context = context;
             Configuration = configuration;

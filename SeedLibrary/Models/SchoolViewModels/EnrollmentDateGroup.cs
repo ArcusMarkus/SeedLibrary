@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace SeedLibrary.Models.SchoolViewModels
+namespace SeedLibrary.Models.SeedViewModels
 {
     public class EnrollmentDateGroup
     {

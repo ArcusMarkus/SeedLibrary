@@ -4,7 +4,7 @@ namespace SeedLibrary.Data
 {
     public static class DbInitializer
     {
-        public static void Initialize(SchoolContext context)
+        public static void Initialize(SeedContext context)
         {
             // Look for any students.
             if (context.Seeds.Any())
