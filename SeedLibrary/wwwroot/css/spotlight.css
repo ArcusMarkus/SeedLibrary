@@ -23,7 +23,6 @@
 
 .borderedcontainer{
     border: 5px solid #F46E15;
-    border-radius: 10px;
     padding: 2vh;
 }
 
@@ -44,4 +43,8 @@ h3 {
     font-family: 'Lato-Bold'; 
     font-size: 50px;
     border-bottom: 3vh solid #EC373C;
+}
+
+.card{
+    border-radius: 0%;
 }
