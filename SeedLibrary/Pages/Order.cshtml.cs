@@ -1,4 +1,4 @@
-using SeedLibrary.Models.SchoolViewModels;
+using SeedLibrary.Models.SeedViewModels;
 using SeedLibrary.Data;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -13,10 +13,10 @@ namespace SeedLibrary.Pages.Order
 {
     public class OrderModel : PageModel
     {
-        private readonly SeedLibrary.Data.SchoolContext _context;
+        private readonly SeedLibrary.Data.SeedContext _context;
         private readonly IConfiguration Configuration;
 
-        public OrderModel(SchoolContext context, IConfiguration configuration)
+        public OrderModel(SeedContext context, IConfiguration configuration)
         {
             _context = context;
             Configuration = configuration;

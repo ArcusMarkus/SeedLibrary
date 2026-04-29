@@ -12,9 +12,9 @@ namespace SeedLibrary.Pages.Seeds
 {
     public class CreateModel : PageModel
     {
-        private readonly SeedLibrary.Data.SchoolContext _context;
+        private readonly SeedLibrary.Data.SeedContext _context;
 
-        public CreateModel(SeedLibrary.Data.SchoolContext context)
+        public CreateModel(SeedLibrary.Data.SeedContext context)
         {
             _context = context;
         }

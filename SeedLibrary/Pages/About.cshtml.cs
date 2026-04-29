@@ -1,4 +1,4 @@
-using SeedLibrary.Models.SchoolViewModels;
+using SeedLibrary.Models.SeedViewModels;
 using SeedLibrary.Data;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
