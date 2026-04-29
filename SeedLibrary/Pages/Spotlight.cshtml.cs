@@ -17,9 +17,9 @@ namespace SeedLibrary.Pages.SpotlightSeeds;
 
 public class SpotlightSeedsModel : PageModel
 {
-    private readonly SeedLibrary.Data.SchoolContext _context;
+    private readonly SeedLibrary.Data.SeedContext _context;
     private readonly IConfiguration Configuration;
-        public SpotlightSeedsModel(SchoolContext context, IConfiguration configuration)
+        public SpotlightSeedsModel(SeedContext context, IConfiguration configuration)
         {
             _context = context;
             Configuration = configuration;
@@ -55,6 +55,22 @@ public class SpotlightSeedsModel : PageModel
                 seedsIQ = seedsIQ.Where(s => s.Name.Contains(searchString)
                                     || s.Variety.Contains(searchString));
             }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    seedsIQ = seedsIQ.OrderByDescending(s => s.Name);
+                    break;
+                case "Year":
+                    seedsIQ = seedsIQ.OrderBy(s => s.Year);
+                    break;
+                case "Year_desc":
+                    seedsIQ = seedsIQ.OrderByDescending(s => s.Year);
+                    break;
+                default:
+                    seedsIQ = seedsIQ.OrderBy(s => s.Name);
+                    break;
+            }
+
 
             var pageSize = Configuration.GetValue("PageSize", 5);
             Seeds = await PaginatedList<Seed>.CreateAsync(seedsIQ.AsNoTracking(), pageIndex ?? 1, pageSize);
