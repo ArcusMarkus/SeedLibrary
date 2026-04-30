@@ -33,6 +33,12 @@
             @Html.DisplayNameFor(model => model.Seeds[0].Year)
         </a> 
     </button>
+    <button type="button" class="btn btn-link">
+        <a asp-page="./Index" asp-route-sortOrder="@Model.VarietySort" 
+            asp-route-currentFilter="@Model.CurrentFilter">
+            @Html.DisplayNameFor(model => model.Seeds[0].Variety)
+        </a> 
+    </button>
     <thead>
         <tr>
             <th>
