@@ -23,6 +23,7 @@ namespace SeedLibrary.Pages.Seeds
         }
         public string NameSort { get; set; }
         public string YearSort { get; set; }
+        public string VarietySort {get; set;}
         public string CurrentFilter { get; set; }
         public string CurrentSort { get; set; }
         public PaginatedList<Seed> Seeds { get;set; } = default!;
@@ -33,6 +34,7 @@ namespace SeedLibrary.Pages.Seeds
             CurrentSort = sortOrder;
             NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             YearSort = sortOrder == "Year" ? "year_desc" : "Year";
+            VarietySort = sortOrder == "Variety" ? "variety_desc" : "Variety";
             if (searchString != null)
             {
                 pageIndex = 1;
@@ -59,8 +61,14 @@ namespace SeedLibrary.Pages.Seeds
                 case "Year":
                     seedsIQ = seedsIQ.OrderBy(s => s.Year);
                     break;
-                case "Year_desc":
+                case "year_desc":
                     seedsIQ = seedsIQ.OrderByDescending(s => s.Year);
+                    break;
+                case "Variety":
+                    seedsIQ = seedsIQ.OrderBy(s => s.Variety);
+                    break;   
+                case "variety_desc":
+                    seedsIQ = seedsIQ.OrderByDescending(s => s.Variety);
                     break;
                 default:
                     seedsIQ = seedsIQ.OrderBy(s => s.Name);
