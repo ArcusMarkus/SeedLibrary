@@ -26,6 +26,13 @@
     padding: 2vh;
 }
 
+.cardspotlight{
+    border: 5px solid #FDB717;
+    padding: 2vh;
+    margin-bottom: 2vh;
+    margin-right:2vh;
+}
+
 #inseasonsquare{
     border-color: #EC373C;
 }
@@ -45,6 +52,7 @@ h3 {
     border-bottom: 3vh solid #EC373C;
 }
 
-.card{
-    border-radius: 0%;
+button{
+    padding-top: 1vh;
+    padding-bottom:1vh;
 }

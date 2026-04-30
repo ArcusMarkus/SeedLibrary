@@ -20,9 +20,24 @@
         <div class="col-sm-6">
             <h2>Seed Spotlight</h2>
             <div class="borderedcontainer">
-                <p>
-                    SPOTLIGHT SEED CAROUSEL TO GO IN HERE
-                </p>
+                <div style="overflow-y:scroll; height:450px">
+                <!-- TEMPORARY - NEED TO CHANGE TO TAKE ONLY SEED SPOTLIGHT ONCE DATABASE FINALISED -->
+                @for (int i = 0; i < Model.Seeds.Count; i++)
+                {
+                <div class="cardspotlight">
+                    <!-- TEMPORARY - NEEDS TO BE SEED IMAGE ONCE ADDED TO THE DATABASE -->
+                    <div class="row">
+                        <div class = "col-sm-4">
+                            <img src="/images/Flower.png" alt="Seed Library" style= "width: 80px; height: 80px" />
+                        </div>
+                        <div class="col-sm-8">
+                            <p>@Model.Seeds[i].Variety @Model.Seeds[i].Name<p>
+                            <a asp-page="./Seeds/Details" asp-route-id="@Model.Seeds[i].ID">More Information</a>
+                        </div>
+                    </div>
+                </div>
+                }
+                </div>
             </div>
         </div>
         <div class="col-sm-6">
